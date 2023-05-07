@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db:
+    container_name: pg-docker
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dbadmin1234
+      POSTGRES_DB: mysys
+    ports:
+      - "54320:5432"
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin3
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: joey.cm.lam@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
