@@ -4,7 +4,7 @@ import * as path from "path";
 import * as fs from "fs/promises";
 
 @Injectable()
-export class HealthService {
+export default class HealthService {
     private readonly startTime: number;
 
     constructor() {

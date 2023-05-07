@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { Account } from '../entity/account.entity';
+import { Account } from '../dto/account.dto';
 import AccountService from "../service/account.service";
 
 @Controller('accounts')
-export class AccountController {
+export default class AccountController {
     private readonly acctService: AccountService;
     constructor(accountService: AccountService) {
         this.acctService = accountService;
@@ -13,4 +13,5 @@ export class AccountController {
     async getAccounts(): Promise<Account[]> {
         return this.acctService.findAll();
     }
+
 }
