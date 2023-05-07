@@ -6,7 +6,7 @@ import HealthService from "../service/health.service";
 import AccountController from "../controller/account.controller";
 import AccountService from "../service/account.service";
 import DatabaseModule from "./database.module";
-import {LoggerMiddleware} from "./logger.middleware";
+import LoggerMiddleware from "./logger.middleware";
 
 @Module({
     imports: [DatabaseModule],
