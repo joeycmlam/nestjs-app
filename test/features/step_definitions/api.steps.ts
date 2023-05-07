@@ -48,3 +48,19 @@ Then('the response should match the content of {string}', async (fileName: strin
         expect(response[field]).to.deep.equal(expectedData[field]);
     }
 });
+
+When('I make a GET request to {string} and {string}', async (endpoint: string, accountCd: string) => {
+    const uri: string =`${baseUrl}${endpoint}/${accountCd}/holdings`;
+    response = await axios.get(uri);
+});
+
+Then('the holding result should match with file {string}', async (expectedFile: string) => {
+    const filePath = path.join(__dirname, '..', expectedFile);
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    const expectedData = JSON.parse(fileContent);
+
+    expect(response.data).to.deep.equal(expectedData);
+
+});
+
+

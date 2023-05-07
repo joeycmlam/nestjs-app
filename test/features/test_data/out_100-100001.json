@@ -1,0 +1,10 @@
+[
+  {
+    "account_cd": "100-100001",
+    "account_nm": "test-account",
+    "stock_cd": "0001.HK",
+    "exchange": "HKEX",
+    "unit": "1000",
+    "book_cost": "5000"
+  }
+]
