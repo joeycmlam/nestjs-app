@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { Account } from '../dto/account.dto';
+import {Injectable} from '@nestjs/common';
+import {InjectRepository} from '@nestjs/typeorm';
+import {Repository} from 'typeorm';
+import {Account} from '../dto/account.dto';
 import HoldingDTO from "../dto/holding.dto";
 
 @Injectable()
@@ -22,7 +22,6 @@ export default class AccountService {
       INNER JOIN holding h ON h.account_cd = acc.account_cd
       WHERE acc.account_cd = $1
     `;
-
-        return await this.acctRepo.query(query, [accountCd]);
+        return await this.acctRepo.query(query, [ accountCd ]);
     }
 }

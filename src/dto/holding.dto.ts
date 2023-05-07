@@ -1,4 +1,3 @@
-// src/holding.dto.ts
 export default class HoldingDTO {
     account_cd: string;
     account_nm: string;

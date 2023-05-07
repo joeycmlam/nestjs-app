@@ -1,0 +1,18 @@
+[
+  {
+    "account_cd": "200-202001",
+    "account_nm": "test-account - 200-202001",
+    "stock_cd": "0005.HK",
+    "exchange": "HKEX",
+    "unit": "2000",
+    "book_cost": "5000"
+  },
+  {
+    "account_cd": "200-202001",
+    "account_nm": "test-account - 200-202001",
+    "stock_cd": "2800.HK",
+    "exchange": "HKEX",
+    "unit": "5000",
+    "book_cost": "10000"
+  }
+]
