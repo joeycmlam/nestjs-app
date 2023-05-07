@@ -1,0 +1,42 @@
+{
+  "name": "nestjs-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main",
+    "start:dev": "ts-node src/main.ts",
+    "start:debug": "node --inspect-brk -r ts-node/register src/main.ts",
+    "test:cucumber": "c8 --report-dir=coverage/cucumber npx cucumber-js --config test/cucumber.config.js test/features/*.feature --exit",
+    "generate-test-reports": "node generate-cucumber-html.js && open coverage/cucumber/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^9.1.0",
+    "@nestjs/common": "^9.4.0",
+    "@nestjs/core": "^9.4.0",
+    "@nestjs/platform-express": "^9.4.0",
+    "@nestjs/typeorm": "^9.0.1",
+    "@types/pg": "^8.6.6",
+    "js-yaml": "^4.1.0",
+    "pg": "^8.10.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1",
+    "typedi": "^0.10.0",
+    "typeorm": "^0.3.15"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^9.4.2",
+    "@nestjs/schematics": "^9.1.0",
+    "@nestjs/testing": "^9.4.0",
+    "axios": "^1.4.0",
+    "c8": "^7.13.0",
+    "chai": "^4.3.7",
+    "cucumber-html-reporter": "^6.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
