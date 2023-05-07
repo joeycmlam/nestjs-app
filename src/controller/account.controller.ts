@@ -1,4 +1,3 @@
-// src/app.controller.ts
 import { Controller, Get } from '@nestjs/common';
 import { Account } from '../entity/account.entity';
 import AccountService from "../service/account.service";

@@ -1,5 +1,4 @@
-// src/account.entity.ts
-import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity('account')
 export class Account {
