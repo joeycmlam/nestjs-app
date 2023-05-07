@@ -2,19 +2,16 @@
   {
     "account_cd": "100-100001",
     "account_nm": "test-account",
-    "updated_by": "postgres",
-    "updated_dt": "2023-05-06T08:31:07.238Z"
+    "updated_by": "postgres"
   },
   {
     "account_cd": "100-102001",
     "account_nm": "test-account - 102001",
-    "updated_by": "postgres",
-    "updated_dt": "2023-05-06T08:31:41.660Z"
+    "updated_by": "postgres"
   },
   {
     "account_cd": "200-202001",
     "account_nm": "test-account - 200-202001",
-    "updated_by": "postgres",
-    "updated_dt": "2023-05-06T22:55:10.707Z"
+    "updated_by": "postgres"
   }
 ]

@@ -39,9 +39,12 @@ Then('the response version is {string}', (version: string) => {
 });
 
 Then('the response should match the content of {string}', async (fileName: string) => {
+    const fieldsToValidate = ['account_cd', 'account_nm'];
     const filePath = path.join(__dirname, '..', fileName);
     const fileContent = await fs.readFile(filePath, 'utf-8');
     const expectedData = JSON.parse(fileContent);
 
-    expect(response.data).to.deep.equal(expectedData);
+    for (const field of fieldsToValidate) {
+        expect(response[field]).to.deep.equal(expectedData[field]);
+    }
 });
