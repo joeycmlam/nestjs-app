@@ -1,20 +1,22 @@
-import { Given, When, Then, Before, After } from '@cucumber/cucumber';
+import {Given, When, Then, BeforeAll, AfterAll} from '@cucumber/cucumber';
 import axios, { AxiosResponse } from 'axios';
 import { expect } from 'chai';
 import { INestApplication } from '@nestjs/common';
 import { bootstrap } from '../../../src/main';
+import * as path from 'path';
+import * as fs from "fs/promises";
 
 let baseUrl: string;
 let response: AxiosResponse;
 let app: INestApplication;
 
-Before(async () => {
+BeforeAll(async () => {
     const testPort = 3001;
     app = await bootstrap(testPort);
     return app;
 });
 
-After(async () => {
+AfterAll(async () => {
     await app.close();
     return app;
 });
@@ -34,4 +36,12 @@ Then('the response status code is {string}', (statusCode: string) => {
 
 Then('the response version is {string}', (version: string) => {
     expect(response.data.version).to.equal(version);
+});
+
+Then('the response should match the content of {string}', async (fileName: string) => {
+    const filePath = path.join(__dirname, '..', fileName);
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    const expectedData = JSON.parse(fileContent);
+
+    expect(response.data).to.deep.equal(expectedData);
 });
